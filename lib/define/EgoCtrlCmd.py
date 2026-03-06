@@ -13,7 +13,8 @@ class EgoCtrlCmd(Base):
         ("acceleration", _float),
         ("accel", _float),
         ("brake", _float),
-        ("steer", _float),        
+        ("front_steer", _float),        
+        # ("rear_steer", _float),        
         ("tail", _char * 2)
     ]
 
@@ -28,5 +29,6 @@ class EgoCtrlCmd(Base):
         self.acceleration = 0
         self.accel = 0
         self.brake = 0
-        self.steer = 0        
+        self.front_steer = 0        
+        # self.rear_steer = 0        
         self.tail = '\r\n'.encode()  

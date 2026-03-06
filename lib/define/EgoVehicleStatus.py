@@ -35,7 +35,8 @@ class EgoVehicleStatus(Base):
         ("accel_x", _float),
         ("accel_y", _float),
         ("accel_z", _float),
-        ("steer", _float),
+        ("front_steer", _float),
+        ("rear_steer", _float),
         ("link_id", _char * 38),
         ("tire_lateral_force_fl", _float), 
         ("tire_lateral_force_fr", _float), 
@@ -49,6 +50,9 @@ class EgoVehicleStatus(Base):
         ("tire_cornering_stiffness_fr", _float), 
         ("tire_cornering_stiffness_rl", _float), 
         ("tire_cornering_stiffness_rr", _float), 
+        ("distance_left_lane_boundary", _float),
+        ("distance_right_lane_boundary", _float),
+        ("cross_track_error", _float),
         ("tail", _char * 2)
 
     ]
@@ -86,7 +90,8 @@ class EgoVehicleStatus(Base):
         self.accel_x = 0
         self.accel_y = 0
         self.accel_z = 0
-        self.steer = 0
+        self.front_steer = 0
+        self.rear_steer = 0
         self.link_id = b'' 
         self.tire_lateral_force_fl = 0
         self.tire_lateral_force_fr = 0
@@ -95,8 +100,11 @@ class EgoVehicleStatus(Base):
         self.side_slip_angle_fl = 0
         self.side_slip_angle_fr = 0
         self.side_slip_angle_rl = 0
-        self.side_slip_angle_ = 0
+        self.side_slip_angle_rr = 0
         self.tire_cornering_stiffness_fl = 0
         self.tire_cornering_stiffness_fr = 0
         self.tire_cornering_stiffness_rl = 0
         self.tire_cornering_stiffness_rr = 0
+        self.distance_left_lane_boundary = 0
+        self.distance_right_lane_boundary = 0
+        self.cross_track_error = 0
