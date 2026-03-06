@@ -14,13 +14,13 @@ class EgoCtrlCmd(Base):
         ("accel", _float),
         ("brake", _float),
         ("front_steer", _float),        
-        # ("rear_steer", _float),        
+        ("rear_steer", _float),        
         ("tail", _char * 2)
     ]
 
     def __init__(self):
         self.header = '#MoraiCtrlCmd$'.encode()
-        self.data_lenght = 23
+        self.data_lenght = 27
         self.aux_data = (0,0,0)
         self.ctrl_mode = 0
         self.gear = 0
@@ -30,5 +30,5 @@ class EgoCtrlCmd(Base):
         self.accel = 0
         self.brake = 0
         self.front_steer = 0        
-        # self.rear_steer = 0        
+        self.rear_steer = 0        
         self.tail = '\r\n'.encode()  
